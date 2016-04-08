@@ -1,0 +1,82 @@
+PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994,[3] the PHP reference implementation is now produced by The PHP Group.[4] PHP originally stood for Personal Home Page,[3] but it now stands for the recursive backronym PHP: Hypertext Preprocessor.[5]
+
+PHP code may be embedded into HTML code, or it can be used in combination with various web template systems, web content management system and web frameworks. PHP code is usually processed by a PHP interpreter implemented as a module in the web server or as a Common Gateway Interface (CGI) executable. The web server combines the results of the interpreted and executed PHP code, which may be any type of data, including images, with the generated web page. PHP code may also be executed with a command-line interface (CLI) and can be used to implement standalone graphical applications.[6]
+
+The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on almost every operating system and platform, free of charge.[7]
+
+The PHP language evolved without a written formal specification or standard until 2014, leaving the canonical PHP interpreter as a de facto standard. Since 2014 work has gone on to create a formal PHP specification.[8]
+
+Contents  [hide] 
+1	History
+1.1	Early history
+1.2	PHP 3 and 4
+1.3	PHP 5
+1.4	PHP 6 and Unicode
+1.5	PHP 7
+1.6	Release history
+2	Mascot
+3	Syntax
+3.1	Data types
+3.2	Functions
+3.3	Objects
+4	Implementations
+5	Licensing
+6	Development and community
+7	Installation and configuration
+8	Use
+9	Security
+10	See also
+11	References
+12	Further reading
+13	External links
+History[edit]
+Early history[edit]
+
+
+
+Rasmus Lerdorf, who wrote the original Common Gateway Interface (CGI) component, together with Andi Gutmans and Zeev Suraski, who rewrote the parser that formed PHP 3.
+PHP development began in 1994 when Rasmus Lerdorf wrote several Common Gateway Interface (CGI) programs in C,[9][10][11] which he used to maintain his personal homepage. He extended them to work with web forms and to communicate with databases, and called this implementation "Personal Home Page/Forms Interpreter" or PHP/FI.
+
+PHP/FI could be used to build simple, dynamic web applications. To accelerate bug reporting and improve the code, Lerdorf initially announced the release of PHP/FI as "Personal Home Page Tools (PHP Tools) version 1.0" on the Usenet discussion group comp.infosystems.www.authoring.cgi on June 8, 1995.[12][13] This release already had the basic functionality that PHP has as of 2013. This included Perl-like variables, form handling, and the ability to embed HTML. The syntax resembled that of Perl but was simpler, more limited and less consistent.[4]
+
+Early PHP was not intended to be a new programming language, and grew organically, with Lerdorf noting in retrospect: "I don’t know how to stop it, there was never any intent to write a programming language […] I have absolutely no idea how to write a programming language, I just kept adding the next logical step on the way."[14] A development team began to form and, after months of work and beta testing, officially released PHP/FI 2 in November 1997.
+
+The fact that PHP was not originally designed but instead was developed organically has led to inconsistent naming of functions and inconsistent ordering of their parameters.[15] In some cases, the function names were chosen to match the lower-level libraries which PHP was "wrapping",[16] while in some very early versions of PHP the length of the function names was used internally as a hash function, so names were chosen to improve the distribution of hash values.[17]
+
+PHP 3 and 4[edit]
+Zeev Suraski and Andi Gutmans rewrote the parser in 1997 and formed the base of PHP 3, changing the language's name to the recursive acronym PHP: Hypertext Preprocessor.[4][18] Afterwards, public testing of PHP 3 began, and the official launch came in June 1998. Suraski and Gutmans then started a new rewrite of PHP's core, producing the Zend Engine in 1999.[19] They also founded Zend Technologies in Ramat Gan, Israel.[4]
+
+On May 22, 2000, PHP 4, powered by the Zend Engine 1.0, was released.[4] As of August 2008 this branch reached version 4.4.9. PHP 4 is no longer under development nor will any security updates be released.[20][21]
+
+PHP 5[edit]
+On July 13, 2004, PHP 5 was released, powered by the new Zend Engine II.[4] PHP 5 included new features such as improved support for object-oriented programming, the PHP Data Objects (PDO) extension (which defines a lightweight and consistent interface for accessing databases), and numerous performance enhancements.[22] In 2008 PHP 5 became the only stable version under development. Late static binding had been missing from PHP and was added in version 5.3.[23][24]
+
+Many high-profile open-source projects ceased to support PHP 4 in new code as of February 5, 2008, because of the GoPHP5 initiative,[25] provided by a consortium of PHP developers promoting the transition from PHP 4 to PHP 5.[26][27]
+
+Over time, PHP interpreters became available on most existing 32-bit and 64-bit operating systems, either by building them from the PHP source code, or by using pre-built binaries.[28] For the PHP versions 5.3 and 5.4, the only available Microsoft Windows binary distributions were 32-bit x86 builds,[29][30] requiring Windows 32-bit compatibility mode while using Internet Information Services (IIS) on a 64-bit Windows platform. PHP version 5.5 made the 64-bit x86-64 builds available for Microsoft Windows.[31]
+
+PHP 6 and Unicode[edit]
+PHP received mixed reviews due to lacking native Unicode support at the core language level.[32][33] In 2005, a project headed by Andrei Zmievski was initiated to bring native Unicode support throughout PHP, by embedding the International Components for Unicode (ICU) library, and representing text strings as UTF-16 internally.[34] Since this would cause major changes both to the internals of the language and to user code, it was planned to release this as version 6.0 of the language, along with other major features then in development.[35]
+
+However, a shortage of developers who understood the necessary changes, and performance problems arising from conversion to and from UTF-16, which is rarely used in a web context, led to delays in the project.[36] As a result, a PHP 5.3 release was created in 2009, with many non-Unicode features back-ported from PHP 6, notably namespaces. In March 2010, the project in its current form was officially abandoned, and a PHP 5.4 release was prepared containing most remaining non-Unicode features from PHP 6, such as traits and closure re-binding.[37] Initial hopes were that a new plan would be formed for Unicode integration, but as of 2014 none has been adopted.
+
+PHP 7[edit]
+During 2014 and 2015, a new major PHP version was developed, which was numbered PHP 7. The numbering of this version involved some debate.[38] While the PHP 6 Unicode experiment had never been released, several articles and book titles referenced the PHP 6 name, which might have caused confusion if a new release were to reuse the name.[39] After a vote, the name PHP 7 was chosen.[40]
+
+The foundation of PHP 7 is a PHP branch that was originally dubbed PHP next generation (phpng). It was authored by Dmitry Stogov, Xinchen Hui and Nikita Popov,[41] and aimed to optimize PHP performance by refactoring the Zend Engine while retaining near-complete language compatibility.[42] As of 14 July 2014, WordPress-based benchmarks, which served as the main benchmark suite for the phpng project, showed an almost 100% increase in performance. Changes from phpng are also expected to make it easier to improve performance in the future, as more compact data structures and other changes are seen as better suited for a successful migration to a just-in-time (JIT) compiler.[43] Because of the significant changes, the reworked Zend Engine is called Zend Engine 3, succeeding Zend Engine 2 used in PHP 5.[44]
+
+Because of major internal changes in phpng, it must receive a new major version number of PHP, rather than a minor PHP 5 release, according to PHP's release process.[45] Major versions of PHP are allowed to break backward-compatibility of code and therefore PHP 7 presented an opportunity for other improvements beyond phpng that require backward-compatibility breaks. In particular, it involved the following changes:
+
+Many fatal- or recoverable-level legacy PHP error mechanisms were replaced with modern object-oriented exceptions[46]
+The syntax for variable dereferencing was reworked to be internally more consistent and complete, allowing the use of the operators ->, [], (), {}, and :: with arbitrary meaningful left-hand-side expressions[47]
+Support for legacy PHP 4-style constructor methods was deprecated[48]
+The behavior of the foreach statement was changed to be more predictable[49]
+Constructors for the few classes built-in to PHP which returned null upon failure were changed to throw an exception instead, for consistency[50]
+Several unmaintained or deprecated server application programming interfaces (SAPIs) and extensions were removed from the PHP core, most notably the legacy mysql extension[51]
+The behavior of the list() operator was changed to remove support for strings[52]
+Support for legacy ASP-style PHP code delimiters (<% and %>, <script language=php> and </script>) was removed[53]
+An oversight allowing a switch statement to have multiple default clauses was fixed[54]
+Support for hexadecimal number support in some implicit conversions from strings to number types was removed[55]
+The left-shift and right-shift operators were changed to behave more consistently across platforms[56]
+Conversions between integers and floating point numbers were tightened and implemented more consistently across platforms[56][57]
+PHP 7 also included new language features. Most notably, it introduces return type declarations for functions,[58] which complement the existing parameter type declarations, and support for the scalar types (integer, float, string, and boolean) in parameter and return type declarations.[59]

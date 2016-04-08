@@ -1,0 +1,69 @@
+Hack (programming language)
+From Wikipedia, the free encyclopedia
+Not to be confused with Haxe (programming language).
+Hack
+Hack logo, featuring white lowercase "hack" letters on a black background, with stylized triangular geometric shapes on the left
+Designed by	Julien Verlaguet, Alok Menghrajani, Drew Paroski, and others[1]
+Developer	Facebook
+First appeared	2014
+Typing discipline	static, dynamic, weak
+OS	Cross-platform
+License	BSD License[2]
+Website	hacklang.org
+Influenced by
+PHP, OCaml, Java, C#, Scala
+Hack is a programming language for the HipHop Virtual Machine (HHVM), created by Facebook as a dialect of PHP. The language implementation is open-source, licensed under the BSD License.[2][3][4]
+
+Hack allows programmers to use both dynamic typing and static typing. This kind of a type system is called gradual typing, which is also implemented in other programming languages such as ActionScript.[5] Hack's type system allows types to be specified for function arguments, function return values, and class properties; however, types of local variables are always inferred and cannot be specified.[3][6]
+
+Contents  [hide] 
+1	History
+2	Features
+3	Syntax and semantics
+3.1	Functions
+4	See also
+5	References
+6	External links
+History[edit]
+Hack was introduced on March 20, 2014.[7] Before the announcement of the new programming language, Facebook had already implemented the code and "battle tested" it on a large portion of its web site.
+
+Features[edit]
+Hack interoperates seamlessly with PHP, which is a widely used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML. A majority of the valid PHP scripts is also valid in Hack; however, numerous less frequently used PHP features and language constructs are not supported in Hack.[8]
+
+Hack extends the type hinting available in PHP 5 through the introduction of static typing, by adding new type hints (for example, for scalar types such as integer or string), as well as by extending the use of type hints (for example, for class properties or function return values). However, types of local variables cannot be specified.[6] Since Hack uses a gradual typing system, in the default mode, type annotations are not mandatory even in places they cannot be inferred; the type system will assume the author is correct and admit the code.[9] However, a "strict" mode is available which requires such annotations, and thus enforces fully sound code.[10]
+
+Syntax and semantics[edit]
+The basic file structure of a Hack script is similar to a PHP script with a few changes. A Hack file starts with <?hh as opposed to <?php for a PHP script:
+
+<?hh
+echo 'Hello World';
+The above script, similar to PHP, will be executed and the following output is sent to the browser:
+
+Hello World
+An important point to note is that unlike PHP, Hack and HTML code do not mix. Normally you can mix PHP and HTML code together in the same file, like this:
+
+<html>
+    <head>
+        <title>PHP Test</title>
+    </head>
+    <body>
+        <!-- hh and html do not mix -->
+        <?php echo '<p>Hello World</p>'; ?> 
+    </body>
+</html>
+This type of code is not supported by Hack; either XHP or another template engine needs to be used.[8]
+
+Functions[edit]
+Hack allows types to be specified for function arguments and function return values. Functions in Hack are thus annotated with types like the following:
+
+<?hh
+// Hack functions are annotated with types.
+function negate(bool $x): bool {
+    return !$x;
+}
+See also[edit]
+Portal icon	Computer programming portal
+KPHP
+Parrot virtual machine
+Phalanger
+Project Zero
