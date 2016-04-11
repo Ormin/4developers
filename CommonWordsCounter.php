@@ -13,12 +13,10 @@ class CommonWordsCounter
 		$this->loadFile($fileName);
 	}	
 
-	public function numberOfCommonWords($articlePath) 
+	public function numberOfCommonWords(Article $article) 
 	{
 		$count = 0;
-		$data = file_get_contents($articlePath);
-		$normalized = preg_replace("/[^A-Za-z0-9 ]/", '', $data);
-		$words = explode(" ",$normalized);
+		$words = $article->getWords();
 		$wordsFound = [];
 		foreach($words as $word) {
 
