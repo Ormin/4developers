@@ -1,3 +1,10 @@
+Rozwiazane zadanie ;)
+
+Zrobione:
+* Complexity operacji zmniejszone - wczesniej bylo O(nw) do O(x) gdzie n = liczba znakow, w = liczba slow, x = liczba znakow po normalizacji ( same alfanumeryczne )
+* Poprawiony blad - wczesniej wykrywalo tylko slowa ktore maja na koncu newline, przez co bylo malo wynikow , a tak naprawde jest duzo wiecej ;)
+
+
 Zadaniem jest zoptymalizowanie klasy `CommonWordsCounter`, tak, aby czas wykonywania skryptu `start.php` był jak najkrótszy. Logika działania skryptu nie może się zmienić - tzn. wypisuje on liczbę popularnych słów w każdym z artykułów znajdujących się w katalogu `articles`.
 
 Zawartość pliku `words.txt`, która będzie użyta do sprawdzenia przesłanych rozwiązań może się różnić od tej dostępnej na GitHub. Dla ułatwienia w pliku `start.php` dodaliśmy proste mierzenie czasu, abyś na bieżąco mógł sprawdzać swoje postępy.
