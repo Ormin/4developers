@@ -2,23 +2,32 @@
 
 class CommonWordsCounter 
 {
+	/**
+	 * Index of words.
+	 * Key - strtolower word optimized to an internal php hashcode
+	 */
 	private $words = [];
 
 	public function __construct($fileName) 
 	{
 		$this->loadFile($fileName);
-		$this->removeDuplicates();
 	}	
 
-	public function numberOfCommonWords($message) 
+	public function numberOfCommonWords($articlePath) 
 	{
 		$count = 0;
-		foreach($this->words as $word) {			
-			if(preg_match('|' . $word . '|', $message)) {
-				$count++;							
+		$data = file_get_contents($articlePath);
+		$normalized = preg_replace("/[^A-Za-z0-9 ]/", '', $data);
+		$words = explode(" ",$normalized);
+		$wordsFound = [];
+		foreach($words as $word) {
+
+			if(isset($this->words[$word]) && !isset($wordsFound[$word])) {
+				$count++;
+				$wordsFound[$word] = true;
 			}
 		}
-		return $count > 10 ? '10+' : $count;
+		return $count;
 	}
 
 	protected function loadFile($fileName)
@@ -26,7 +35,7 @@ class CommonWordsCounter
 		$handle = fopen($fileName, "r");
 		if ($handle) {
 		    while (($line = fgets($handle)) !== false) {		    	
-		    	$this->words[] = $line;			        
+		    	$this->words[trim($line)] = true;			        
 		    }
 
 		    fclose($handle);
@@ -35,15 +44,4 @@ class CommonWordsCounter
 		} 
 	}
 
-	protected function removeDuplicates()
-	{
-		$this->words;
-		$properWords = $wordsWithoutDuplicates = [];
-		foreach($this->words as $word) {
-			if (!in_array($word, $wordsWithoutDuplicates)) {
-				$properWords[] = $word;
-			}
-		}
-		$this->words = $properWords;
-	}
 }
